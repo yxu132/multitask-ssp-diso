@@ -32,9 +32,9 @@ import matplotlib.pyplot as plt
 
 import argparse
 
-parser = argparse.ArgumentParser(description='Short sample app')
+parser = argparse.ArgumentParser()
 
-parser.add_argument('-i', action="store", default='', dest='input', help='Input file in FASA format. ')
+parser.add_argument('-i', action="store", default='', dest='input', required=True, help='Input file in FASTA format. ')
 parser.add_argument('-o', action="store", default='', dest='output', help='Output file for storing generated results. ')
 parser.add_argument('-v', action="store_true", default=False, dest="visualise", help='Visualise the results. '
                                                                   'If not set, no visualisation is generated. ')
@@ -70,7 +70,21 @@ aa_dict['V']=-10.0
 aa_dict['Y']=-4.0
 
 def readFasta(path):
-    return [], []
+    ids, seqs = [], []
+    current_id, current_seq = '', ''
+    for line in open(path):
+        if line.startswith('>'):
+            if current_id != '':
+                ids.append(current_id)
+                seqs.append(current_seq)
+            current_id = line[1:].strip()
+        elif line.strip() != '':
+            current_seq += line.strip()
+    if current_id!='':
+        ids.append(current_id)
+        seqs.append(current_seq)
+
+    return ids, seqs
 
 def readLines(path):
     ret =[]
@@ -259,12 +273,12 @@ def predict():
     is_plot = results.visualise
     is_compared = results.single
 
-    # ids, seqs = readFasta('')
-    ids = ['P04637', 'Q9BQ15']
-    names = ['p53', 'SOSSB1']
-    seqs = ['MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDIEQWFTEDPGPDEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPLSSSVPSQKTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHHERCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCNSSCMGGMNRRPILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENLRKKGEPHHELPPGSTKRALPNNTSSSPQPKKKPLDGEYFTLQIRGRERFEMFRELNEALELKDAQAGKEPGGSRAHSSHLKSKKGQSTSRHKKLMFKTEGPDSD',
-            'MTTETFVKDIKPGLKNLNLIFIVLETGRVTKTKDGHEVRTCKVADKTGSINISVWDDVGNLIQPGDIIRLTKGYASVFKGCLTLYTGRGGDLQKIGEFCMVYSEVPNFSEPNPEYSTQQAPNKAVQNDSNPSASQPTTGPSAASPASENQNGNGLSAPPGPGGGPHPPHTPSHPPSTRITRSQPNHTPAGPPGPSSNPVSNGKETRRSSKR',
-            ]
+    ids, seqs = readFasta(input)
+    # ids = ['P04637', 'Q9BQ15']
+    # names = ['p53', 'SOSSB1']
+    # seqs = ['MEEPQSDPSVEPPLSQETFSDLWKLLPENNVLSPLPSQAMDDLMLSPDDIEQWFTEDPGPDEAPRMPEAAPPVAPAPAAPTPAAPAPAPSWPLSSSVPSQKTYQGSYGFRLGFLHSGTAKSVTCTYSPALNKMFCQLAKTCPVQLWVDSTPPPGTRVRAMAIYKQSQHMTEVVRRCPHHERCSDSDGLAPPQHLIRVEGNLRVEYLDDRNTFRHSVVVPYEPPEVGSDCTTIHYNYMCNSSCMGGMNRRPILTIITLEDSSGNLLGRNSFEVRVCACPGRDRRTEEENLRKKGEPHHELPPGSTKRALPNNTSSSPQPKKKPLDGEYFTLQIRGRERFEMFRELNEALELKDAQAGKEPGGSRAHSSHLKSKKGQSTSRHKKLMFKTEGPDSD',
+    #         'MTTETFVKDIKPGLKNLNLIFIVLETGRVTKTKDGHEVRTCKVADKTGSINISVWDDVGNLIQPGDIIRLTKGYASVFKGCLTLYTGRGGDLQKIGEFCMVYSEVPNFSEPNPEYSTQQAPNKAVQNDSNPSASQPTTGPSAASPASENQNGNGLSAPPGPGGGPHPPHTPSHPPSTRITRSQPNHTPAGPPGPSSNPVSNGKETRRSSKR',
+    #         ]
     print("PROGRESS: Generating PSSMs... ")
     ids, seqs, test, label = construct_features(ids, seqs)
 
@@ -328,7 +342,7 @@ def predict():
         print("PROGRESS: Prediciton completed for Multitask-D. ")
 
         if is_plot:
-            visualise(ids, seqs, disos, pssp_helxes, pssp_strands, pssp_coils, compared_disos=compared_disos,  names=names)
+            visualise(ids, seqs, disos, pssp_helxes, pssp_strands, pssp_coils, compared_disos=compared_disos)
 
 
 if __name__ == '__main__':
