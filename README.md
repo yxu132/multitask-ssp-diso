@@ -1,6 +1,6 @@
 # multitask-ssp-diso
 
-This repository is for predict protein secondary structure population and intrisically disordered proteins and regions simultaneously. 
+This repository provides the source codes for our developed multi-task deep learning framework for simultaneous prediction of protein secondary structure population (SSP) and intrinsically disordered proteins (IDPs) and regions (IDRs).
 
 ## Basic requirement
 
@@ -42,4 +42,34 @@ This command will describe the input parameters and the output specifications in
   -s          Genearate additional results from single task framework (DeepS2D-D) for IDP/IDR prediction as a comparison, optional. 
 
 ```
+
+## Example of running the scripts
+
+1, To predict the SSPs and IDP/IDRs by using the pretrained multitask framework, please run
+```
+  $ python run_predictin.py -i test.fasta
+```
+
+2, To predict the SSPs and IDP/IDRs by using the pretrained multitask framework and save the predicted results to output.txt, please run
+```
+  $ python run_predictin.py -i test.fasta -o output.txt
+```
+
+3, To predict the SSPs and IDP/IDRs by using the pretrained multitask framework, save the predicted results to output.txt and generated the visualisation of the results, please run
+```
+  $ python run_predictin.py -i test.fasta -o output.txt -v
+```
+
+4, To predict the SSPs and IDP/IDRs by using the pretrained multitask framework and IDP/IDRs by using the pretrained singletask framework, please run
+```
+  $ python run_predictin.py -i test.fasta -s
+```
+
+5, To predict the SSPs and IDP/IDRs by using the pretrained multitask framework and IDP/IDRs by using the pretrained singletask framework, and to visualise the compared results in graphs, please run
+```
+  $ python run_predictin.py -i test.fasta -s -v
+```
+
+
+
 
