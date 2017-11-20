@@ -45,7 +45,9 @@ This program is tested on MasOS and GNU/Linux.
 ```
 This command will describe the input parameters and the output specifications in detail. 
 
-3, An brief introduction to the input and output parameters are given below. 
+## Input and output parameters
+
+An brief introduction to the input and output parameters are given below. 
 
 ```
   -i INPUT    Input file in FASTA format, required. You will need to prepare a input file of protein sequences in the format of FASTA.
