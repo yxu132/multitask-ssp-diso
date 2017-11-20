@@ -32,7 +32,7 @@ This command will describe the input parameters and the output specifications in
 3, An brief introduction to the input and output parameters are given below. 
 
 ```
-  -i INPUT    Input file in FASTA format, required. You will need to prepare a input file of protein sequences in the format of [FASTA](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=BlastHelp).
+  -i INPUT    Input file in FASTA format, required. You will need to prepare a input file of protein sequences in the format of FASTA.
 
   -o OUTPUT   Output file for storing generated results, optional. If set, the predicted results will be written to the destination file specified here. 
 
