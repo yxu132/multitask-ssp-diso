@@ -26,7 +26,7 @@ To run the scripts in this repository, you need to install
 
 This program is tested on MasOS and GNU/Linux. 
 
-## Steps for setting up the scripts
+## Steps for setting up 
 
 1, Please set up the parameter *blast_path* in dist/config.py to the binary path of your psiblast program. 
 
