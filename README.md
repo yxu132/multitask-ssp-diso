@@ -25,22 +25,22 @@ To run the scripts in this repository, you need to install
 2, To predict protein secondary structure population and intrinsically disordered proteins and regions, please enter the directory dist and run,  
 
 ```
-> python run_prediction.py -h
+ $ python run_prediction.py -h
 ```
 This command will describe the input parameters and the output specifications in detail. 
 
 3, An brief introduction to the input and output parameters are given below. 
 
 
-  -i INPUT    Input file in FASTA format, required. You will need to prepare a input file of protein sequences in the format of [FASTA](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=BlastHelp).
+  >-i INPUT    Input file in FASTA format, required. You will need to prepare a input file of protein sequences in the format of [FASTA](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=BlastHelp).
 
-  -o OUTPUT   Output file for storing generated results, optional. If set, the predicted results will be written to the destination file specified here. 
+  >-o OUTPUT   Output file for storing generated results, optional. If set, the predicted results will be written to the destination file specified here. 
 
-  -v          Visualise the results, optional. If set, a graph demonstrating the predicted results will be generated and saved default to ../figure/visualisation.pdf. 
+  >-v          Visualise the results, optional. If set, a graph demonstrating the predicted results will be generated and saved default to ../figure/visualisation.pdf. 
 
-  -f          The output path of generated visualisation, only available when -v is set, optional. If set, the generated graph will be saved to the destination path set here. 
+  >-f          The output path of generated visualisation, only available when -v is set, optional. If set, the generated graph will be saved to the destination path set here. 
 
-  -s          Genearate additional results from single task framework (DeepS2D-D) for IDP/IDR prediction as a comparison, optional. 
+  >-s          Genearate additional results from single task framework (DeepS2D-D) for IDP/IDR prediction as a comparison, optional. 
 
 
 
