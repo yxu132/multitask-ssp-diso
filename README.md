@@ -1,6 +1,10 @@
 # multitask-ssp-diso
 
-This repository provides the source codes for our developed multi-task deep learning framework for simultaneous prediction of protein secondary structure population (SSP) and intrinsically disordered proteins (IDPs) and regions (IDRs).
+This repository provides the source codes for our developed multi-task deep learning framework for simultaneous prediction of protein secondary structure population (SSP) and intrinsically disordered proteins (IDPs) and regions (IDRs). The related manuscript *Simultaneous prediction of protein secondary structure population and intrinsic disorder us-ing multi-task deep learning* is submitted to *Bioinformations*. 
+
+The deep learning implementation is based on the framework [TensorFlow](https://www.tensorflow.org/install/). Please refer to the original manuscript for detailed scription of the singletask framework and the multitask framework for prediction SSPs and IDP/IDRs. 
+
+The input feature，the position-based scoring matrix, is generated using the [PSI-BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE=Proteins&PROGRAM=blastp&RUN_PSIBLAST=on) and parsed using a module 'chkparse' from [the s2D method](http://www-mvsoftware.ch.cam.ac.uk/index.php/s2D). The blast database uniref90filt.fasta.zip is downloaded from [the online server](http://www-mvsoftware.ch.cam.ac.uk/index.php/s2D) of the s2D method. 
 
 ## Basic requirement
 
@@ -18,11 +22,23 @@ To run the scripts in this repository, you need to install
 
 * [argparse](https://docs.python.org/3/library/argparse.html) >= 3.2
 
-## Steps for running the scripts
+## System compatibility
 
-1, Please set up the blast_path and the compiled blast database (if any) in dist/config.py before running the following scripts. 
+This program is tested on MasOS and GNU/Linux. 
 
-2, To predict protein secondary structure population and intrinsically disordered proteins and regions, please enter the directory dist and run,  
+## Steps for setting up the scripts
+
+1, Please set up the parameter *blast_path* in dist/config.py to the binary path of your psiblast program. 
+
+2, Please set up the parameter *uniref90_psi_blast_database* in dist/config.py to the path of the compiled psiblast database, if any
+
+3, If the psiblast database is not compiled yet, please compile the database before step 2. 
+
+4, please set up the parameter *gcc_path* if you have a different command for running *gcc*. 
+
+5, Please set up the parameter *tmp_path* if you want to save the genearated .chk files from [PSI-BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE=Proteins&PROGRAM=blastp&RUN_PSIBLAST=on) to a different directory. 
+
+6, For detailed instruction of the input and output parameters, please enter the directory dist and run,  
 
 ```
  $ python run_prediction.py -h
@@ -71,6 +87,5 @@ This command will describe the input parameters and the output specifications in
   $ python run_predictin.py -i test.fasta -s -v
 ```
 
-
-
-
+## License
+This project is licensed under GNU GPLv3
