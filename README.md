@@ -44,7 +44,7 @@ This command will describe the input parameters and the output specifications in
 ```
 
 
-## Example of running the scripts
+## Examples of running the scripts
 
 1, To predict the SSPs and IDP/IDRs by using the pretrained multitask framework, please run
 ```
