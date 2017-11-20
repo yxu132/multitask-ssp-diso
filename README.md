@@ -30,7 +30,8 @@ To run the scripts in this repository, you need to install
 This command will describe the input parameters and the output specifications in detail. 
 
 3, An brief introduction to the input and output parameters are given below. 
-```
+
+
   -i INPUT    Input file in FASTA format, required. You will need to prepare a input file of protein sequences in the format of [FASTA](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE_TYPE=BlastDocs&DOC_TYPE=BlastHelp).
 
   -o OUTPUT   Output file for storing generated results, optional. If set, the predicted results will be written to the destination file specified here. 
@@ -41,7 +42,7 @@ This command will describe the input parameters and the output specifications in
 
   -s          Genearate additional results from single task framework (DeepS2D-D) for IDP/IDR prediction as a comparison, optional. 
 
-```
+
 
 ## Example of running the scripts
 
