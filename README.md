@@ -1,10 +1,10 @@
 # multitask-ssp-diso
 
-This repository provides the source codes for our developed multi-task deep learning framework for simultaneous prediction of protein secondary structure population (SSP) and intrinsically disordered proteins (IDPs) and regions (IDRs). The related manuscript entitled “Simultaneous prediction of protein secondary structure population and intrinsic disorder using multi-task deep learning” has been submitted to *Bioinformatics*.
+This repository provides the source codes for our developed multi-task deep learning framework for simultaneous prediction of protein secondary structure populations (SSPs) and intrinsically disordered proteins (IDPs) and regions (IDRs). The related manuscript entitled “Simultaneous prediction of protein secondary structure population and intrinsic disorder using multi-task deep learning” has been submitted to *Bioinformatics*.
 
 The deep learning implementation is based on the framework [TensorFlow](https://www.tensorflow.org/install/). Please refer to the original manuscript for detailed description of the singletask framework and the multitask framework for predicting SSPs and IDP/IDRs. 
 
-The input feature，the position-based scoring matrix (PSSM), is generated using the [PSI-BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE=Proteins&PROGRAM=blastp&RUN_PSIBLAST=on) and parsed using a module 'chkparse' from [the s2D method](http://www-mvsoftware.ch.cam.ac.uk/index.php/s2D). The NCBI database uniref90filt.fasta.zip that BLAST searched against to generate the PSSM profiles was downloaded from [the online server](http://www-mvsoftware.ch.cam.ac.uk/index.php/s2D) of the s2D method.
+The input feature，the position-based scoring matrix (PSSM), was generated using the [PSI-BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE=Proteins&PROGRAM=blastp&RUN_PSIBLAST=on) and parsed using a module 'chkparse' from [the s2D method](http://www-mvsoftware.ch.cam.ac.uk/index.php/s2D). The NCBI database uniref90filt.fasta.zip that BLAST searched against to generate the PSSM profiles was downloaded from [the online server](http://www-mvsoftware.ch.cam.ac.uk/index.php/s2D) of the s2D method.
 
 ## Basic requirement
 
@@ -34,11 +34,11 @@ This program is tested on MacOS and GNU/Linux.
 
 3. If the psiblast database is not compiled yet, please compile the database before step 2. 
 
-4. please set up the parameter *gcc_path* if you have a different command for running *gcc*. 
+4. Please set up the parameter *gcc_path* if you have a different command for running *gcc*. 
 
 5. Please set up the parameter *tmp_path* if you want to save the genearated .chk files from [PSI-BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE=Proteins&PROGRAM=blastp&RUN_PSIBLAST=on) to a different directory. 
 
-6. For detailed instruction of the input and output parameters, please enter the directory dist and run,  
+6. For detailed instructions of the input and output parameters, please enter the directory *dist* and run the following command,  
 
 ```
  $ python run_prediction.py -h
@@ -56,9 +56,9 @@ An brief introduction to the input and output parameters are given below.
 
   -v          Visualise the results, optional. If set, a graph demonstrating the predicted results will be generated and saved default to ../figure/visualisation.pdf. 
 
-  -f          The output path of generated visualisation, only available when -v is set, optional. If set, the generated graph will be saved to the destination path set here. 
+  -f          The output path of generated visualisation, only available when -v is set, optional. If set, the generated graph will be saved to the destination path specified here. 
 
-  -s          Genearate additional results from single task framework (DeepS2D-D) for IDP/IDR prediction as a comparison, optional. 
+  -s          Genearate additional results from the single task framework (DeepS2D-D) for IDP/IDR prediction as a comparison, optional. 
 ```
 
 
