@@ -28,17 +28,17 @@ This program is tested on MacOS and GNU/Linux.
 
 ## Steps for setting up 
 
-1, Please set up the parameter *blast_path* in dist/config.py to the binary path of your psiblast program. 
+1. Please set up the parameter *blast_path* in dist/config.py to the binary path of your psiblast program. 
 
-2, Please set up the parameter *uniref90_psi_blast_database* in dist/config.py to the path of the compiled psiblast database, if any
+2. Please set up the parameter *uniref90_psi_blast_database* in dist/config.py to the path of the compiled psiblast database, if any
 
-3, If the psiblast database is not compiled yet, please compile the database before step 2. 
+3. If the psiblast database is not compiled yet, please compile the database before step 2. 
 
-4, please set up the parameter *gcc_path* if you have a different command for running *gcc*. 
+4. please set up the parameter *gcc_path* if you have a different command for running *gcc*. 
 
-5, Please set up the parameter *tmp_path* if you want to save the genearated .chk files from [PSI-BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE=Proteins&PROGRAM=blastp&RUN_PSIBLAST=on) to a different directory. 
+5. Please set up the parameter *tmp_path* if you want to save the genearated .chk files from [PSI-BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE=Proteins&PROGRAM=blastp&RUN_PSIBLAST=on) to a different directory. 
 
-6, For detailed instruction of the input and output parameters, please enter the directory dist and run,  
+6. For detailed instruction of the input and output parameters, please enter the directory dist and run,  
 
 ```
  $ python run_prediction.py -h
@@ -69,22 +69,22 @@ An brief introduction to the input and output parameters are given below.
   $ python run_predictin.py -i test.fasta
 ```
 
-2, To predict the SSPs and IDP/IDRs by using the multitask deep learning model and save the predicted results to output.txt, run the following command:
+2. To predict the SSPs and IDP/IDRs by using the multitask deep learning model and save the predicted results to output.txt, run the following command:
 ```
   $ python run_predictin.py -i test.fasta -o output.txt
 ```
 
-3, To predict the SSPs and IDP/IDRs by using the multitask deep learning model, save the predicted results to output.txt and generate the visualisation of the results, run the following command:
+3. To predict the SSPs and IDP/IDRs by using the multitask deep learning model, save the predicted results to output.txt and generate the visualisation of the results, run the following command:
 ```
   $ python run_predictin.py -i test.fasta -o output.txt -v
 ```
 
-4, To predict the SSPs and IDP/IDRs by using the multitask deep learning model and IDP/IDRs by using the singletask deep learning model, run the following command:
+4. To predict the SSPs and IDP/IDRs by using the multitask deep learning model and IDP/IDRs by using the singletask deep learning model, run the following command:
 ```
   $ python run_predictin.py -i test.fasta -s
 ```
 
-5, To predict the SSPs and IDP/IDRs by using the multitask deep learning model and IDP/IDRs by using the singletask deep learning model, and visualise the compared results in graphs, run the following command:
+5. To predict the SSPs and IDP/IDRs by using the multitask deep learning model and IDP/IDRs by using the singletask deep learning model, and visualise the compared results in graphs, run the following command:
 ```
   $ python run_predictin.py -i test.fasta -s -v
 ```
