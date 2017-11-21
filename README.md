@@ -2,7 +2,7 @@
 
 This repository provides the source codes for our developed multi-task deep learning framework for simultaneous prediction of protein secondary structure population (SSP) and intrinsically disordered proteins (IDPs) and regions (IDRs). The related manuscript entitled “Simultaneous prediction of protein secondary structure population and intrinsic disorder using multi-task deep learning” has been submitted to *Bioinformatics*.
 
-The deep learning implementation is based on the framework [TensorFlow](https://www.tensorflow.org/install/). Please refer to the original manuscript for detailed description of the singletask framework and the multitask framework for prediction SSPs and IDP/IDRs. 
+The deep learning implementation is based on the framework [TensorFlow](https://www.tensorflow.org/install/). Please refer to the original manuscript for detailed description of the singletask framework and the multitask framework for predicting SSPs and IDP/IDRs. 
 
 The input feature，the position-based scoring matrix (PSSM), is generated using the [PSI-BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE=Proteins&PROGRAM=blastp&RUN_PSIBLAST=on) and parsed using a module 'chkparse' from [the s2D method](http://www-mvsoftware.ch.cam.ac.uk/index.php/s2D). The NCBI database uniref90filt.fasta.zip that BLAST searched against to generate the PSSM profiles was downloaded from [the online server](http://www-mvsoftware.ch.cam.ac.uk/index.php/s2D) of the s2D method.
 
