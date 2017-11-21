@@ -79,12 +79,12 @@ An brief introduction to the input and output parameters are given below.
   $ python run_predictin.py -i test.fasta -o output.txt -v
 ```
 
-4, To predict the SSPs and IDP/IDRs by using the multitask deep learning model, and predict IDP/IDRs by using the singletask deep learning model, run the following command:
+4, To predict the SSPs and IDP/IDRs by using the multitask deep learning model and IDP/IDRs by using the singletask deep learning model, run the following command:
 ```
   $ python run_predictin.py -i test.fasta -s
 ```
 
-5, To predict the SSPs and IDP/IDRs by using the multitask deep learning model and IDP/IDRs by using the singletask deep learning model, and to visualise the compared results in graphs, run the following command:
+5, To predict the SSPs and IDP/IDRs by using the multitask deep learning model and IDP/IDRs by using the singletask deep learning model, and visualise the compared results in graphs, run the following command:
 ```
   $ python run_predictin.py -i test.fasta -s -v
 ```
