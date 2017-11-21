@@ -4,7 +4,7 @@ This repository provides the source codes for our developed multi-task deep lear
 
 The deep learning implementation is based on the framework [TensorFlow](https://www.tensorflow.org/install/). Please refer to the original manuscript for detailed scription of the singletask framework and the multitask framework for prediction SSPs and IDP/IDRs. 
 
-The input feature，the position-based scoring matrix, is generated using the [PSI-BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE=Proteins&PROGRAM=blastp&RUN_PSIBLAST=on) and parsed using a module 'chkparse' from [the s2D method](http://www-mvsoftware.ch.cam.ac.uk/index.php/s2D). The blast database uniref90filt.fasta.zip is downloaded from [the online server](http://www-mvsoftware.ch.cam.ac.uk/index.php/s2D) of the s2D method. 
+The input feature，the position-based scoring matrix (PSSM), is generated using the [PSI-BLAST](https://blast.ncbi.nlm.nih.gov/Blast.cgi?CMD=Web&PAGE=Proteins&PROGRAM=blastp&RUN_PSIBLAST=on) and parsed using a module 'chkparse' from [the s2D method](http://www-mvsoftware.ch.cam.ac.uk/index.php/s2D). The blast database uniref90filt.fasta.zip is downloaded from [the online server](http://www-mvsoftware.ch.cam.ac.uk/index.php/s2D) of the s2D method. 
 
 ## Basic requirement
 
