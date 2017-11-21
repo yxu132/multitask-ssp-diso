@@ -24,7 +24,7 @@ To run the scripts in this repository, you need to install
 
 ## System compatibility
 
-This program is tested on MasOS and GNU/Linux. 
+This program is tested on MacOS and GNU/Linux. 
 
 ## Steps for setting up 
 
